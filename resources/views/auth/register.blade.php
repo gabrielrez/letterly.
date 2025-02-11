@@ -13,7 +13,7 @@
                     </div>
                     <div class="w-full">
                         <label for="email">Last Name</label>
-                        <input type="text" name="email" placeholder="Dominique" class="border border-primary    w-full rounded-[4px] mt-2 px-4 py-2" required>
+                        <input type="text" name="email" placeholder="Decocco" class="border border-primary    w-full rounded-[4px] mt-2 px-4 py-2" required>
                     </div>
                 </div>
                 <div class="mt-6 w-full">
