@@ -5,7 +5,8 @@
 
         <main class="mx-auto">
             <h1 class="text-4xl text-center">Login<span class="text-primary">.</span></h1>
-            <form class="mt-12 w-[420px]">
+            <form class="mt-12 w-[420px]" action="/login" method="POST">
+                @csrf
                 <div class="mt-6 w-full">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" placeholder="dominic@email.com" class="border border-primary w-full rounded-[4px] mt-2 px-4 py-2" required>

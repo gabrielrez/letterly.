@@ -5,7 +5,8 @@
 
         <main class="mx-auto">
             <h1 class="text-4xl text-center">Create Account<span class="text-primary">.</span></h1>
-            <form class="mt-12 w-[420px]">
+            <form class="mt-12 w-[420px]" action="/register" method="POST">
+                @csrf
                 <div class="mt-6 w-full flex gap-6">
                     <div class="w-full">
                         <label for="email">First Name</label>
