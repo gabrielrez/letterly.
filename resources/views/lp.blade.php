@@ -10,7 +10,7 @@
         <main class="text-center">
             <h1 class="text-4xl">Empower Your Voice with Stunning <span class="text-primary underline">Writings</span></h1>
             <p class="text-base mt-6">Create, Engage and Connect Effortlessly. <a href="/register" class="text-primary underline">Start right now</a></p>
-            <span class="block mx-auto w-32 h-[2px] border-b-2 border-dashed border-primary mt-12"></span>
+            <span class="block mx-auto w-32 h-[2px] border-b border-dashed border-primary mt-12"></span>
             <img class="mt-12" src="img/lp.webp" alt="Black and white illustration of elderly scholars reading.">
         </main>
         <x-layout_components.footer>

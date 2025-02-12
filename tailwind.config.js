@@ -15,6 +15,7 @@ export default {
                 primary: '#8B0000',
                 black: '#363737',
                 gray: '#868787',
+                detail: '#C9C9C9',
             },
             fontFamily: {
                 lora: ["Lora", "serif"],

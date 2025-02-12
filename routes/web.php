@@ -12,8 +12,9 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/login', fn() => view('auth.login'))->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::middleware(['auth', NoCache::class])->group(function () {
     Route::get('/home', [HomeController::class, 'index']);
+
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
