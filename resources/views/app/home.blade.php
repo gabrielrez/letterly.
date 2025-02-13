@@ -16,7 +16,7 @@
                     </div>
                     <h3 class="text-4xl font-semibold mt-2">{{ $post['title'] }}</h3>
                     <p class="font-medium italic mt-2">{{ $post['subtitle'] }}</p>
-                    <p class="mt-6 font-normal">{{ $post['content'] }}</p>
+                    <p class="mt-6 font-normal" id="post_content">{{ Str::limit($post['content'], 400, '...') }}</p>
                     <div class="mt-6 flex justify-between items-center">
                         <a href="/home" class="underline font-semibold hover:text-primary">Read all</a>
                         <div class="flex items-center gap-10 italic">
@@ -32,3 +32,5 @@
     </main>
 
 </x-layout>
+
+@vite('resources/js/scripts/explore.js');
