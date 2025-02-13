@@ -19,5 +19,5 @@ Route::middleware(['auth', NoCache::class])->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout']);
 
-    Route::get('/writings/{wiriting}', [WritingController::class, 'show']);
+    Route::get('/writings/{writing}', [WritingController::class, 'show']);
 });

@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class WritingController extends Controller
 {
     public function show(Writing $writing){
+
+        $writing->load('user');
+
         return view('app.writings.show', [
             'writing' => $writing
         ]);

@@ -16,7 +16,7 @@
                     </div>
                     <h3 class="text-4xl font-semibold mt-2">{{ $writing['title'] }}</h3>
                     <p class="font-medium italic mt-2">{{ $writing['subtitle'] }}</p>
-                    <p class="mt-6 font-normal" id="writing_content">{{ Str::limit($writing['content'], 400, '...') }}</p>
+                    <p class="mt-6 font-normal" id="writing_content">{!! Str::limit($writing['content'], 360, '...') !!}</p>
                     <div class="mt-6 flex justify-between items-center">
                         <form action="/writings/{{ $writing->id }}">
                             @csrf

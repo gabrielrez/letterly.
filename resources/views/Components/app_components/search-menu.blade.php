@@ -1,10 +1,10 @@
 <section class="pb-10 w-full flex items-center gap-12">
-    <ul class="flex gap-12">
+    <ul class="flex gap-12 min-w-max">
         <li>
             <a href="/home" class="text-primary underline">Following</a>
         </li>
         <li>
-            <a href="/home" class="hover:underline">Explore</a>
+            <a href="/home" class="hover:underline">For You</a>
         </li>
     </ul>
     <form action="" class="w-full">
