@@ -3,8 +3,34 @@
 
     <main class="mt-12 flex gap-24">
         <x-app_components.sidebar></x-app_components.sidebar>
-        <div>
-            <h1>teste</h1>
+        <div class="w-full">
+            <x-app_components.search-menu></x-app_components.search-menu>
+            @if($posts->empty())
+                <p class="text-gray text-center">No writings here...</p>
+            @endif
+            @foreach ($posts as $post)
+                <div>
+                    <div class="flex justify-between items-center">
+                        <a href="/home" class="flex items-center gap-3 text-primary hover:underline">
+                            <img src="img/lp.webp" class="w-10 h-10 border-2 border-primary rounded-full object-cover">
+                            <span class="font-bold"></span>
+                        </a>
+                        <span class="text-black text-sm font-extralight italic">{{ $post['created_at'] }}</span>
+                    </div>
+                    <h3 class="text-4xl font-semibold mt-2">{{ $post['title'] }}</h3>
+                    <p class="font-medium italic mt-2">{{ $post['subtitle'] }}</p>
+                    <p class="mt-6 font-normal">{{ $post['content'] }}</p>
+                    <div class="mt-6 flex justify-between items-center">
+                        <a href="/home" class="underline font-semibold hover:text-primary">Read all</a>
+                        <div class="flex items-center gap-10 italic">
+                            <a href="/home" class="hover:underline">Save</a>
+                            <a href="/home" class="hover:underline">Comments</a>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="block mx-auto w-32 h-[2px] border-b border-dashed border-detail my-16"></span>                
+            @endforeach
         </div>
     </main>
 

@@ -31,7 +31,12 @@ class User extends Authenticatable
         ];
     }
 
-    public function fullName()
+    public function writing()
+    {
+        return $this->hasMany(Writing::class);
+    }
+
+    public function fullName(): string
     {
         return $this->first_name . ' ' . $this->last_name;
     }

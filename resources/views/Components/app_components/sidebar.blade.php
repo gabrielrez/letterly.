@@ -1,4 +1,4 @@
-<section class="h-[70vh] border-r border-detail border-dashed pr-24 flex flex-col justify-between">
+<section class="h-[70vh] min-w-[202px] border-r border-detail border-dashed pr-24 flex flex-col justify-between sticky top-32">
     <ul class="flex flex-col gap-12">
         <li>
             <a href="/home" class="{{ request()->is('home*') ? 'text-primary underline' : 'text-black' }} hover:underline"><i class="fa-regular fa-newspaper mr-2"></i></i>Home</a>
