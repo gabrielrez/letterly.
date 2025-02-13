@@ -8,28 +8,28 @@
                 @csrf
                 <div class="mt-6 w-full flex gap-6">
                     <div class="w-full">
-                        <label for="first_name">First Name</label>
+                        <label for="name">Name</label>
                         <input 
                             type="text" 
-                            name="first_name" 
-                            placeholder="Dominique" 
+                            name="name" 
+                            placeholder="Dominic Decocco" 
                             class="border border-primary w-full rounded-[4px] mt-2 px-4 py-2"
-                            value="{{ $errors->has('first_name') ? '' : old('first_name') }}" 
+                            value="{{ $errors->has('name') ? '' : old('name') }}" 
                             required>
-                        @error('first_name') 
+                        @error('name') 
                             <p class="text-primary text-sm mt-1">{{ $message }}</p> 
                         @enderror
                     </div>
                     <div class="w-full">
-                        <label for="last_name">Last Name</label>
+                        <label for="last_name">Username</label>
                         <input 
                             type="text" 
-                            name="last_name" 
-                            placeholder="Decocco" 
+                            name="username" 
+                            placeholder="dominic_123" 
                             class="border border-primary w-full rounded-[4px] mt-2 px-4 py-2"
-                            value="{{ $errors->has('last_name') ? '' : old('last_name') }}" 
+                            value="{{ $errors->has('username') ? '' : old('username') }}" 
                             required>
-                        @error('last_name') 
+                        @error('username') 
                             <p class="text-primary text-sm mt-1">{{ $message }}</p> 
                         @enderror
                     </div>

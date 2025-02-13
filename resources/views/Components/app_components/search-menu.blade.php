@@ -1,4 +1,4 @@
-<section class="sticky top-32 pb-10 w-full flex items-center gap-12">
+<section class="pb-10 w-full flex items-center gap-12">
     <ul class="flex gap-12">
         <li>
             <a href="">Writings</a>

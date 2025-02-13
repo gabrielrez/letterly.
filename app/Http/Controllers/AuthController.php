@@ -14,8 +14,8 @@ class AuthController extends Controller
     public function register(Request $request): RedirectResponse
     {
         $attributes = $request->validate([
-            'first_name' => ['required', 'max:254'],
-            'last_name'  => ['required', 'max:254'],
+            'name' => ['required', 'max:254'],
+            'username'  => ['required', 'max:254', 'unique:users,username'],
             'email'      => ['required', 'email', 'max:254', 'unique:users,email'],
             'password'   => ['required', Password::min(6)->max(18)->letters()->numbers(), 'confirmed'],
         ]);
