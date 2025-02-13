@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class WritingController extends Controller
 {
-    public function show(Request $request, Writing $id){
-        // Retrieve an especific writing
+    public function show(Writing $writing){
+        return view('app.writings.show', [
+            'writing' => $writing
+        ]);
     }
 
     public function edit(Request $request, Writing $id){

@@ -5,20 +5,23 @@
         <x-app_components.sidebar></x-app_components.sidebar>
         <div class="w-full">
             <x-app_components.search-menu></x-app_components.search-menu>
-            @foreach ($posts as $post)
+            @foreach ($writings as $writing)
                 <div>
                     <div class="flex justify-between items-center">
                         <a href="/home" class="flex items-center gap-3 text-primary hover:underline">
                             <img src="img/profile-picture-default.jpg" class="w-10 h-10 border-2 border-primary rounded-full object-cover">
-                            <span class="font-bold">{{ $post->user->username }}</span>
+                            <span class="font-bold">{{ $writing->user->username }}</span>
                         </a>
-                        <span class="text-black text-sm font-extralight italic">{{ $post->created_at->format('d/m/Y') }}</span>
+                        <span class="text-black text-sm font-extralight italic">{{ $writing->created_at->format('d/m/Y') }}</span>
                     </div>
-                    <h3 class="text-4xl font-semibold mt-2">{{ $post['title'] }}</h3>
-                    <p class="font-medium italic mt-2">{{ $post['subtitle'] }}</p>
-                    <p class="mt-6 font-normal" id="post_content">{{ Str::limit($post['content'], 400, '...') }}</p>
+                    <h3 class="text-4xl font-semibold mt-2">{{ $writing['title'] }}</h3>
+                    <p class="font-medium italic mt-2">{{ $writing['subtitle'] }}</p>
+                    <p class="mt-6 font-normal" id="writing_content">{{ Str::limit($writing['content'], 400, '...') }}</p>
                     <div class="mt-6 flex justify-between items-center">
-                        <a href="/home" class="underline font-semibold hover:text-primary">Read all</a>
+                        <form action="/writings/{{ $writing->id }}">
+                            @csrf
+                            <button class="underline font-semibold hover:text-primary">Read all</button>
+                        </form>
                         <div class="flex items-center gap-10 italic">
                             <a href="/home" class="hover:underline">Save</a>
                             <a href="/home" class="hover:underline">Comments</a>
@@ -33,4 +36,4 @@
 
 </x-layout>
 
-@vite('resources/js/scripts/explore.js');
+@vite('resources/js/scripts/home/explore.js');

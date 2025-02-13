@@ -9,10 +9,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Writing::with('user')->get();
+        $writings = Writing::with('user')->get();
 
         return view('app.home', [
-            'posts' => $posts
+            'writings' => $writings
         ]);
     }
 }

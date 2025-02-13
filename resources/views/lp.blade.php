@@ -13,7 +13,6 @@
             <span class="block mx-auto w-32 h-[2px] border-b border-dashed border-primary mt-12"></span>
             <img class="mt-12" src="img/lp.webp" alt="Black and white illustration of elderly scholars reading.">
         </main>
-        <x-layout_components.footer>
-        </x-layout_components.footer>
+        <x-layout_components.footer></x-layout_components.footer>
     </div>
 </x-layout>
