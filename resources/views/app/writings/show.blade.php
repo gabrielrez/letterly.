@@ -17,7 +17,7 @@
             <h3 class="text-4xl font-semibold mt-2">{{ $writing['title'] }}</h3>
             <p class="font-medium italic mt-2">{{ $writing['subtitle'] }}</p>
             <p class="mt-6 font-normal" id="writing_content">{!! $writing['content'] !!}</p>
-            <div class="flex justify-end items-center gap-10 italic mt-10">
+            <div class="flex justify-end items-center gap-10 italic my-10">
                 <a href="/home" class="hover:underline">Save</a>
                 <a href="/home" class="hover:underline">Comments</a>
             </div>

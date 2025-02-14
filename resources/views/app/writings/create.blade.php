@@ -11,17 +11,26 @@
         <form id="text_form" class="w-full" action="/writings" method="POST">
             @csrf
             <div>
-                <h3 class="text-2xl text-black">Title</h3>
+                <div class="flex items-center gap-3">
+                    <span class="block w-0.5 h-6 rounded-[4px] bg-primary"></span>
+                    <h3 class="text-2xl text-black">Title</h3>
+                </div>
                 <p class="text-sm text-gray mt-1 italic">Enter a meaningful title for your writing.</p>
                 <input type="text" placeholder="Title example" id="title" class="w-full mt-3 px-4 py-2 rounded-[4px] border border-detail text-black" name="title" required title="Enter a meaningful title for your writing">
             </div>
             <div class="mt-8">
-                <h3 class="text-2xl text-black">Subtitle</h3>
+                <div class="flex items-center gap-3">
+                    <span class="block w-0.5 h-6 rounded-[4px] bg-primary"></span>
+                    <h3 class="text-2xl text-black">Subtitle</h3>
+                </div>
                 <p class="text-sm text-gray mt-1 italic">Provide a subtitle that complements the title.</p>
                 <input type="text" placeholder="Subtitle example" id="subtitle" class="w-full mt-3 px-4 py-2 rounded-[4px] border border-detail text-black" name="subtitle" required title="Provide a subtitle that complements the title">
             </div>
             <div class="mt-8">
-                <h3 class="text-2xl text-black">Content</h3>
+                <div class="flex items-center gap-3">
+                    <span class="block w-0.5 h-6 rounded-[4px] bg-primary"></span>
+                    <h3 class="text-2xl text-black">Content</h3>
+                </div>
                 <p class="text-sm text-gray mt-1 italic mb-3">Write your content here using the text editor.</p>
                 <div id="editor"  style="height: 70vh;" title="Write your content here using the text editor"></div>
                 <input type="hidden" id="content" name="content" required>
