@@ -20,6 +20,10 @@ class WritingController extends Controller
         // Load the edit writing view
     }
 
+    public function create(){
+        return view('app.writings.create');
+    }
+
     public function update(Request $request, Writing $id){
         // Update an especific writing
     }

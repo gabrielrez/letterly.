@@ -19,5 +19,6 @@ Route::middleware(['auth', NoCache::class])->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    Route::get('/writings/compose', [WritingController::class, 'create']);
     Route::get('/writings/{writing}', [WritingController::class, 'show']);
 });
