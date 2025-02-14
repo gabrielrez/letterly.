@@ -8,7 +8,7 @@
         <title>Letterly.</title>
         @vite('resources/css/app.css')
     </head>
-    <body class="max-w-4xl mx-auto text-black font-lora transition duration-200 ease-in-out">
+    <body class="max-w-4xl mx-auto bg-white text-black font-lora transition duration-200 ease-in-out">
         {{ $slot }}
     </body>
 </html>
