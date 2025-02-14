@@ -11,7 +11,7 @@ function contentEditor(){
     });
     
     document.getElementById('text_form').onsubmit = function() {
-        document.getElementById('formatted_text').value = quill.root.innerHTML;
+        document.getElementById('content').value = quill.root.innerHTML;
     };
 }
 
