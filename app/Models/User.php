@@ -40,9 +40,4 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Writing::class, 'writing_user', 'user_id', 'writing_id')->withTimestamps();
     }
-
-    public function fullName(): string
-    {
-        return $this->first_name . ' ' . $this->last_name;
-    }
 }

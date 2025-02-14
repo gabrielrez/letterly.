@@ -4,7 +4,7 @@
             <a href="/home" class="{{ request()->is('home*') ? 'text-primary underline' : 'text-black' }} hover:underline"><i class="fa-regular fa-newspaper mr-2"></i></i>Home</a>
         </li>
         <li>
-            <a href="/home" class="{{ request()->is('profile*') ? 'text-primary underline' : 'text-black' }} hover:underline"><i class="fa-regular fa-user mr-2"></i> My Profile</a>
+            <a href="/profile" class="{{ request()->is('profile*') ? 'text-primary underline' : 'text-black' }} hover:underline"><i class="fa-regular fa-user mr-2"></i> My Profile</a>
         </li>
         <li>
             <a href="/home" id="search" class="{{ request()->is('search*') ? 'text-primary underline' : 'text-black' }} hover:underline"><i class="fa-solid fa-magnifying-glass mr-2"></i> Search</a>
