@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Writing;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WritingController extends Controller
 {
-    public function show(Writing $writing){
+    public function show(Writing $writing)
+    {
 
         $writing->load('user');
 
@@ -16,15 +20,8 @@ class WritingController extends Controller
         ]);
     }
 
-    public function edit(Request $request, Writing $id){
-        // Load the edit writing view
-    }
-
-    public function create(){
-        return view('app.writings.create');
-    }
-
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $attributes = $request->validate([
             'title'    => ['required', 'max:60'],
             'subtitle' => ['required', 'max:120'],
@@ -37,11 +34,16 @@ class WritingController extends Controller
         return redirect('/home');
     }
 
-    public function update(Request $request, Writing $id){
-        // Update an especific writing
-    }
+    public function toggleSave(Request $request, Writing $writing): JsonResponse
+    {
+        $user = $request->user();
 
-    public function destroy(Writing $id){
-        // Delete an especific writing
+        if ($user->savedWritings()->where('writing_id', $writing->id)->exists()) {
+            $user->savedWritings()->detach($writing->id);
+            return response()->json(['success' => true, 'saved' => false]);
+        }
+
+        $user->savedWritings()->attach($writing->id);
+        return response()->json(['success' => true, 'saved' => true]);
     }
 }

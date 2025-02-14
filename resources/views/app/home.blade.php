@@ -23,8 +23,19 @@
                             <button class="underline font-semibold hover:text-primary">Read all</button>
                         </form>
                         <div class="flex items-center gap-10 italic">
-                            <a href="/home" class="hover:underline">Save</a>
-                            <a href="/home" class="hover:underline">Comments</a>
+                            <a 
+                                href="/home"
+                                data-id="{{ $writing['id'] }}" 
+                                class="writing_save {{ $writing->isSave() ? 'text-primary' : 'text-black'}} hover:underline">
+                                <i class="{{ $writing->isSave() ? 'fa-solid' : 'fa-regular'}} fa-bookmark"></i> 
+                                Save
+                            </a>
+                            <a 
+                                href="/home"
+                                class="hover:underline">
+                                <i class="fa-regular fa-message"></i> 
+                                Comments
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -37,3 +48,4 @@
 </x-layout>
 
 @vite('resources/js/scripts/home/explore.js')
+@vite('resources/js/scripts/home/saves.js')
