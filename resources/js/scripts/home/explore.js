@@ -1,11 +1,11 @@
-function handleExplore(){
-    const explore_menu_link = document.getElementById('explore');
+function handleSearch(){
+    const search_menu_link = document.getElementById('search');
 
-    if(!explore_menu_link){
+    if(!search_menu_link){
         return;
     }
     
-    explore_menu_link.addEventListener('click', function(event){
+    search_menu_link.addEventListener('click', function(event){
         event.preventDefault();
         
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -17,4 +17,4 @@ function handleExplore(){
     });
 }
 
-handleExplore();
+handleSearch();

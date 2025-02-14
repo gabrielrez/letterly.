@@ -1,6 +1,6 @@
 <x-layout>
     <x-app_components.header></x-app_components.header>
-        <section class="max-w-xl mx-auto my-12 pt-3">
+        <section class="max-w-xl mx-auto myt-5 pt-3">
             
             <div class="flex gap-3 items-baseline">
                 <a href="/home" class="text-gray w-[36ch] text-sm hover:underline"><- Return to previous screen</a>

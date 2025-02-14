@@ -23,7 +23,7 @@
             <div class="mt-8">
                 <h3 class="text-2xl text-black">Content</h3>
                 <p class="text-sm text-gray mt-1 italic mb-3">Write your content here using the text editor.</p>
-                <div id="editor" class="bg-white border border-detail rounded-b-[4px]" style="height: 70vh;" title="Write your content here using the text editor"></div>
+                <div id="editor"  style="height: 70vh;" title="Write your content here using the text editor"></div>
                 <input type="hidden" id="content" name="content" required>
             </div>
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">

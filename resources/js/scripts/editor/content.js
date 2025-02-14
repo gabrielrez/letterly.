@@ -1,12 +1,11 @@
 function contentEditor(){
+    const toolbarOptions = [['bold', 'italic', 'underline', 'strike'],  ['code-block']];
+
     var quill = new Quill('#editor', {
         theme: 'snow',
         placeholder: 'Write your thoughts...',
         modules: {
-            toolbar: [
-                ['bold', 'italic'],
-                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-            ]
+            toolbar: toolbarOptions
         }
     });
     
