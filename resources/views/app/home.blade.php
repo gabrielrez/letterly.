@@ -36,4 +36,4 @@
 
 </x-layout>
 
-@vite('resources/js/scripts/home/explore.js');
+@vite('resources/js/scripts/home/explore.js')
