@@ -8,7 +8,7 @@
             </div>
 
             <div class="flex justify-between items-center">
-                <a href="/home" class="flex items-center gap-3 text-primary hover:underline">
+                <a href="/profile/{{ $writing->user_id }}" class="flex items-center gap-3 text-primary hover:underline">
                     <img src="../img/profile-picture-default.jpg" class="w-10 h-10 border-2 border-primary rounded-full object-cover">
                     <span class="font-bold">{{ $writing->user->username }}</span>
                 </a>
