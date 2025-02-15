@@ -2,7 +2,7 @@
     <x-app_components.header></x-app_components.header>
         <section class="max-w-xl mx-auto myt-5 pt-3">
             <div class="flex gap-3 items-baseline">
-                <a href="/home" class="text-gray w-[20ch] text-sm hover:underline"><- Return to home</a>
+                <a href="{{ url()->previous() }}" class="text-gray w-[36ch] text-sm hover:underline"><- Return to previous screen</a>
                 <span class="block mx-auto w-full h-[2px] border-b border-dashed border-detail mb-12"></span>
             </div>
             <div class="flex justify-center mb-8">

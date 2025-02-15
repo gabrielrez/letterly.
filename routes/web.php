@@ -26,5 +26,6 @@ Route::middleware(['auth', NoCache::class])->group(function () {
     Route::post('/writings/{writing}/toggle-save', [WritingController::class, 'toggleSave']);
 
     Route::get('/profile', [UserController::class, 'profile']);
+    Route::get('/profile/{user}', [UserController::class, 'show']);
     Route::get('/saves', [WritingController::class, 'saves']);
 });
