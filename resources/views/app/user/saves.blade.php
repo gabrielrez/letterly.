@@ -1,10 +1,13 @@
 <x-layout>
     <x-app_components.header></x-app_components.header>
-
-    <main class="mt-12 flex gap-24">
-        <x-app_components.sidebar></x-app_components.sidebar>
-        <div class="w-full">
-            <x-app_components.search-menu></x-app_components.search-menu>
+        <section class="max-w-xl mx-auto myt-5 pt-3">
+            <div class="flex gap-3 items-baseline">
+                <a href="/home" class="text-gray w-[20ch] text-sm hover:underline"><- Return to home</a>
+                <span class="block mx-auto w-full h-[2px] border-b border-dashed border-detail mb-12"></span>
+            </div>
+            <div class="flex justify-center mb-8">
+                    <h3 class="text-2xl text-primary">Your saves <i class="fa-regular fa-bookmark ml-3"></i></h3>
+            </div>
             @foreach ($writings as $writing)
                 <div>
                     <div class="flex justify-between items-center">
@@ -42,10 +45,47 @@
 
                 <span class="block mx-auto w-32 h-[2px] border-b border-dashed border-detail my-16"></span>
             @endforeach
-        </div>
-    </main>
-
+        </section>
+    <x-layout_components.footer></x-layout_components.footer>
 </x-layout>
 
-@vite('resources/js/scripts/home/explore.js')
-@vite('resources/js/scripts/home/saves.js')
+<script>
+    const posts_save_btn = document.querySelectorAll('.writing_save');
+
+    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+
+    posts_save_btn.forEach(post => {
+        post.addEventListener('click', async function (event) {
+            event.preventDefault();
+
+            const writing_id = post.dataset.id;
+            const icon = post.querySelector('i');
+
+            try {
+                const response = await fetch(`/writings/${writing_id}/toggle-save`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken,
+                    },
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    post.classList.toggle('text-primary', data.saved);
+
+                    if (data.saved) {
+                        icon.classList.remove('fa-regular');
+                        icon.classList.add('fa-solid');
+                    } else {
+                        icon.classList.remove('fa-solid');
+                        icon.classList.add('fa-regular');
+                    }
+                }
+            } catch (error) {
+                console.error('Error on saving/unsaving writing:', error);
+            }
+        });
+    });
+</script>

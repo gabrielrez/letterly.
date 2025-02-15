@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Writing;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -43,5 +44,12 @@ class WritingController extends Controller
 
         $user->savedWritings()->attach($writing->id);
         return response()->json(['success' => true, 'saved' => true]);
+    }
+
+    public function saves(Request $request)
+    {
+        return view('app.user.saves', [
+            'writings' => User::saves($request->user())
+        ]);
     }
 }

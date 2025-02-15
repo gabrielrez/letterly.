@@ -5,7 +5,7 @@
     
     <div class="max-w-xl mx-auto my-12 pt-3">
         <div class="flex gap-3 items-baseline">
-            <a href="/home" class="text-gray w-[36ch] text-sm hover:underline"><- Return to previous screen</a>
+            <a href="/home" class="text-gray w-[20ch] text-sm hover:underline"><- Return to home</a>
             <span class="block mx-auto w-full h-[2px] border-b border-dashed border-detail mb-12"></span>
         </div>
         <form id="text_form" class="w-full" action="/writings" method="POST">

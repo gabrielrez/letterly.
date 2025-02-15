@@ -12,6 +12,8 @@
                 <div class="py-1">
                     <a href="/profile" class="block px-4 py-2 text-sm text-black hover:underline">My Profile</a>
                     <hr class="text-detail opacity-30 mx-3 my-1">
+                    <a href="/saves" class="block px-4 py-2 text-sm text-black hover:underline">Saves</a>
+                    <hr class="text-detail opacity-30 mx-3 my-1">
                     <a href="/settings" class="block px-4 py-2 text-sm text-black hover:underline">Settings</a>
                     <hr class="text-detail opacity-30 mx-3 my-1">
                     <form method="POST" action="/logout">
@@ -28,6 +30,10 @@
     document.addEventListener("DOMContentLoaded", function () {
         const profileButton = document.getElementById("profile-menu-button");
         const profileMenu = document.getElementById("profile-menu");
+
+        profileButton.addEventListener('click', function(){
+            window.location = "/profile";
+        });
 
         profileButton.addEventListener("mouseenter", function (event) {
             event.stopPropagation();

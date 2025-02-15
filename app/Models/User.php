@@ -14,6 +14,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'username',
+        'bio',
         'email',
         'password',
     ];
@@ -31,7 +32,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function writing()
+    public function writings()
     {
         return $this->hasMany(Writing::class);
     }
@@ -39,5 +40,14 @@ class User extends Authenticatable
     public function savedWritings()
     {
         return $this->belongsToMany(Writing::class, 'writing_user', 'user_id', 'writing_id')->withTimestamps();
+    }
+
+    public static function saves($user)
+    {
+        return Writing::join('writing_user', 'writings.id', '=', 'writing_user.writing_id')
+            ->join('users', 'users.id', '=', 'writing_user.user_id')
+            ->where('users.id', $user->id)
+            ->select('writings.*')
+            ->get();
     }
 }
