@@ -15,7 +15,7 @@
         <li>
             <form action="/logout" method="POST">
                 @csrf
-                <button class="hover:underline"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i> Exit</button>
+                <button class="hover:underline"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i> Sign out</button>
             </form>
         </li>
     </ul>
