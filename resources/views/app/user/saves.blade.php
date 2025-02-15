@@ -6,12 +6,12 @@
                 <span class="block mx-auto w-full h-[2px] border-b border-dashed border-detail mb-12"></span>
             </div>
             <div class="flex justify-center mb-8">
-                    <h3 class="text-2xl text-primary">Your saves <i class="fa-regular fa-bookmark ml-3"></i></h3>
+                <h3 class="text-2xl text-primary">Your saves <i class="fa-regular fa-bookmark ml-3"></i></h3>
             </div>
             @foreach ($writings as $writing)
                 <div>
                     <div class="flex justify-between items-center">
-                        <a href="/profile" class="flex items-center gap-3 text-primary hover:underline">
+                        <a href="/profile/{{ $writing->user_id }}" class="flex items-center gap-3 text-primary hover:underline">
                             <img src="img/profile-picture-default.jpg" class="w-10 h-10 border-2 border-primary rounded-full object-cover">
                             <span class="font-bold">{{ $writing->user->username }}</span>
                         </a>

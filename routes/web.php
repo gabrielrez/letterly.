@@ -28,4 +28,8 @@ Route::middleware(['auth', NoCache::class])->group(function () {
     Route::get('/profile', [UserController::class, 'profile']);
     Route::get('/profile/{user}', [UserController::class, 'show']);
     Route::get('/saves', [WritingController::class, 'saves']);
+
+    Route::get('/is-following/{user}', [UserController::class, 'checkIfFollowing']);
+    Route::post('/follow/{user}', [UserController::class, 'follow']);
+    Route::delete('/unfollow/{user}', [UserController::class, 'unfollow']);
 });

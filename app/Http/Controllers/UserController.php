@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Writing;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -27,5 +26,22 @@ class UserController extends Controller
             'user' => $user,
             'writings' => $user->writings()->get()
         ]);
+    }
+
+    public function follow(Request $request, User $user)
+    {
+        $request->user()->following()->attach($user->id);
+        return response()->json(['success' => true]);
+    }
+
+    public function unfollow(Request $request, User $user)
+    {
+        $request->user()->following()->detach($user->id);
+        return response()->json(['success' => true]);
+    }
+
+    public function checkIfFollowing(User $user)
+    {
+        return $user->isFollowing($user);
     }
 }

@@ -37,6 +37,16 @@ class User extends Authenticatable
         return $this->hasMany(Writing::class);
     }
 
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'following_id', 'follower_id');
+    }
+
+    public function following()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'following_id');
+    }
+
     public function savedWritings()
     {
         return $this->belongsToMany(Writing::class, 'writing_user', 'user_id', 'writing_id')->withTimestamps();
@@ -49,5 +59,10 @@ class User extends Authenticatable
             ->where('users.id', $user->id)
             ->select('writings.*')
             ->get();
+    }
+
+    public function isFollowing(User $user): bool
+    {
+        return $this->following()->where('following_id', $user->id)->exists();
     }
 }

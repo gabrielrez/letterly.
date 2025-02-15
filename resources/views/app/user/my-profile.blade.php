@@ -17,7 +17,11 @@
             </div>
             <div class="flex gap-6 mt-12">
                 <div class="bg-primary px-7 py-2 rounded-[4px]">
-                    <p class="font-semibold text-white">126 followers</p>
+                    @if(Auth::user()->followers()->count() < 10 && Auth::user()->followers()->count() != 0)
+                    <p class="font-semibold text-white">0{{ Auth::user()->followers()->count() }} followers</p>
+                    @else
+                    <p class="font-semibold text-white">{{ Auth::user()->followers()->count() }} followers</p>
+                    @endif
                 </div>
                 <div class="border-2 border-black px-7 py-1.5 rounded-[4px]">
                     @if($writings->count() < 10 && $writings->count() != 0)

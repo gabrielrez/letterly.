@@ -6,6 +6,7 @@
         <div class="relative">
             <button id="profile-menu-button" class="flex items-center gap-3 text-primary hover:underline">
                 <img src="/img/profile-picture-default.jpg" class="w-10 h-10 border-2 border-primary hover:border-transparent rounded-full object-cover transition duration-200 ease-in-out">
+                <h3 class="text-sm font-semibold">{{ Auth::user()->username }}</h3>
             </button>
             
             <div id="profile-menu" class="hidden absolute right-0 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black/5">
