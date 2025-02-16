@@ -18,7 +18,7 @@
                 </div>
                 <div id="follow-container">
                     @if(Auth::user()->isFollowing($user))
-                        <button id="follow-btn" data-id="{{ $user->id }}" class="bg-primary px-7 py-2 rounded-[4px] text-white font-semibold">
+                        <button id="follow-btn" data-id="{{ $user->id }}" class="bg-primary px-7 py-2 border-2 border-primary rounded-[4px] text-white font-semibold">
                             Following <i class="fa-solid fa-check ml-1"></i>
                         </button>
                     @else
@@ -80,16 +80,15 @@
                         throw new Error("Failed to perform the action. Please try again.");
                     }
 
-                    const data = await response.json(); // Tenta parsear o JSON
+                    const data = await response.json();
                     if (data.success) {
-                        // Atualiza o botão com base no estado
                         if (isFollowing) {
                             followBtn.innerHTML = `Follow <i class="fa-solid fa-user-plus ml-1"></i>`;
                             followBtn.classList.remove("bg-primary", "text-white");
                             followBtn.classList.add("text-primary", "hover:text-white", "border-2", "border-primary", "hover:bg-primary");
                         } else {
                             followBtn.innerHTML = `Following <i class="fa-solid fa-check ml-1"></i>`;
-                            followBtn.classList.remove("text-primary", "hover:text-white", "border-2", "border-primary", "hover:bg-primary");
+                            followBtn.classList.remove("text-primary", "hover:text-white", "hover:bg-primary");
                             followBtn.classList.add("bg-primary", "text-white");
                         }
                     } else {
