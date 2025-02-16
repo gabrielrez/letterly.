@@ -15,6 +15,7 @@ class HomeController extends Controller
 
         $writings = Writing::with('user')
             ->where('user_id', '!=', $request->user()->id)
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return view('app.home', [

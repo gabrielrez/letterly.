@@ -45,11 +45,4 @@ class WritingController extends Controller
         $user->savedWritings()->attach($writing->id);
         return response()->json(['success' => true, 'saved' => true]);
     }
-
-    public function saves(Request $request)
-    {
-        return view('app.user.saves', [
-            'writings' => User::saves($request->user())
-        ]);
-    }
 }

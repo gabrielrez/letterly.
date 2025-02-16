@@ -44,4 +44,11 @@ class UserController extends Controller
     {
         return $user->isFollowing($user);
     }
+
+    public function saves(Request $request)
+    {
+        return view('app.user.saves', [
+            'writings' => User::saves($request->user())
+        ]);
+    }
 }

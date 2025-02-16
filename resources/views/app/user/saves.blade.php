@@ -6,7 +6,7 @@
                 <span class="block mx-auto w-full h-[2px] border-b border-dashed border-detail mb-12"></span>
             </div>
             <div class="flex justify-center mb-8">
-                <h3 class="text-2xl text-primary">Your saves <i class="fa-regular fa-bookmark ml-3"></i></h3>
+                <h3 class="text-xl text-primary">Your saves <i class="fa-regular fa-bookmark ml-1 text-base"></i></h3>
             </div>
             @foreach ($writings as $writing)
                 <div>

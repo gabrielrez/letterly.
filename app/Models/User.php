@@ -58,6 +58,7 @@ class User extends Authenticatable
             ->join('users', 'users.id', '=', 'writing_user.user_id')
             ->where('users.id', $user->id)
             ->select('writings.*')
+            ->orderBy('created_at', 'desc')
             ->get();
     }
 
